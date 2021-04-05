@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.learn.boot.dao.CrudDao">
+    <delete id="delete" parameterType="String">
+        DELETE FROM user WHERE username=#{userName};
+	    DELETE FROM time WHERE username=#{userName};
+    </delete>
+    <insert id="add" parameterType="String">
+        INSERT into user (username,password) values (#{userName},#{passWord});
+        INSERT into time (username) values (#{userName});
+    </insert>
+    <update id="update" parameterType="String">
+        UPDATE user SET password=#{passWord} WHERE username = #{userName}
+    </update>
+</mapper>

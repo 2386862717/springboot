@@ -1,0 +1,44 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>后台模板管理系统</title>
+    <link type="text/css" rel="stylesheet" href="../haha/main/style.css" th:href="@{/main/style.css}"/>
+</head>
+
+<body>
+<div class="top"></div>
+<div th:replace="common :: #header"></div>
+<div id="content">
+    <div th:replace="common :: #left_menu"></div>
+    <div class="m-right">
+        <div th:replace="common :: #right-nav"></div>
+        <div class="main">
+            <table>
+                <tr>
+                    <!-- th为表格标题栏-->
+                    <th>序号</th>
+                    <th>用户名</th>
+                    <th>上次登录时间</th>
+                </tr>
+                <tr th:each="time:${times}">
+                    <!-- th为表格标题栏-->
+                    <th>序号</th>
+                    <th th:text="${time.userName}">用户名</th>
+                    <th th:text="${time.date}">密码</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function show(id) {
+        var a = document.getElementById(id);
+        if (a.offsetWidth > 0 || a.offsetHeight > 0) {
+            a.style.display = "none";
+        } else {
+            a.style.display = "block";
+        }
+    }
+</script>
+</html>

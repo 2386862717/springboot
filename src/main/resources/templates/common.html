@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>后台模板管理系统</title>
+    <link type="text/css" rel="stylesheet"  th:href="@{/main/style.css}"/>
+</head>
+<body>
+<div id="header">
+    <div class="logo">后台管理系统模板</div>
+    <div class="navigation">
+        <ul>
+            <li>欢迎您！</li>
+            <li><a href="https://demo.mycodes.net/houtai/jiandan_admin/">[[${session.userName}]]</a></li>
+            <li><a href="https://demo.mycodes.net/houtai/jiandan_admin/">修改密码</a></li>
+            <li><a href="https://demo.mycodes.net/houtai/jiandan_admin/">设置</a></li>
+            <li><a href="https://demo.mycodes.net/houtai/jiandan_admin/">退出</a></li>
+        </ul>
+    </div>
+</div>
+<div id="left_menu"class="left_menu">
+    <ul id="nav_dot">
+        <li>
+            <h4 class="M1" onclick="show('m1')"><span></span>系统用户</h4>
+            <div class="list-item none" id="m1">
+                <a href="user-information.html">用户列表</a>
+                <a href="user-last-login.html">用户登录管理</a>
+            </div>
+        </li>
+        <li>
+            <h4 class="M2" onclick="show('m2')"><span></span>工单处理</h4>
+            <div class="list-item none" id="m2">
+                <a href="https://demo.mycodes.net/houtai/jiandan_admin/">工单处理1</a>
+            </div>
+        </li>
+        <li>
+            <h4 class="M3" onclick="show('m3')"><span></span>基础教学</h4>
+            <div class="list-item none" id="m3">
+                <a href="https://demo.mycodes.net/houtai/jiandan_admin/">基础教学1</a>
+            </div>
+        </li>
+        <li>
+            <h4 class="M4" onclick="show('m4')"><span></span>评论管理</h4>
+            <div class="list-item none" id="m4">
+                <a href="https://demo.mycodes.net/houtai/jiandan_admin/">评论管理1</a>
+                <a href="https://demo.mycodes.net/houtai/jiandan_admin/">评论管理2</a>
+                <a href="https://demo.mycodes.net/houtai/jiandan_admin/">评论管理3</a>
+            </div>
+        </li>
+    </ul>
+</div>
+<div id="right-nav" class="right-nav">
+    <ul>
+        <li style="margin-left:25px;">您当前的位置：</li>
+        <li><a href="main.html">系统公告</a></li>
+        <li>&gt;</li>
+        <li><a href="main.html">最新公告</a></li>
+    </ul>
+</div>
+</body>
+<script>
+    function show(id) {
+        var a = document.getElementById(id);
+        if (a.offsetWidth > 0 || a.offsetHeight > 0) {
+            a.style.display = "none";
+        } else {
+            a.style.display = "block";
+        }
+    }
+</script>
+</html>

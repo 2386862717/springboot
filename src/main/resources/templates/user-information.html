@@ -1,0 +1,84 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>后台模板管理系统</title>
+    <link type="text/css" rel="stylesheet" href="../haha/main/style.css" th:href="@{/main/style.css}"/>
+</head>
+
+<body>
+
+<div class="top"></div>
+<div th:replace="common :: #header"></div>
+<div id="content">
+    <div th:replace="common :: #left_menu"></div>
+    <div class="m-right">
+        <div th:replace="common :: #right-nav"></div>
+        <div class="main">
+            <form action="add" method="post">
+                <label>&nbsp&nbsp账号&nbsp</label><input class="input" type="text" name="username"/>&nbsp
+                <label>&nbsp&nbsp密码&nbsp</label><input class="input" type="text" name="password"/>&nbsp
+                <input class="add-button" type="submit" value="增加"/>
+            </form>
+            <table>
+                <tr>
+                    <!-- th为表格标题栏-->
+                    <th>序号</th>
+                    <th>用户名</th>
+                    <th>密码</th>
+                    <th>权限</th>
+                    <th>操作</th>
+                </tr>
+
+                <!-- 弹窗部分 -->
+                <div id="modal">
+                    <a style="position: absolute;bottom:20px;right:20px;" href="javascript:hide()">关闭</a>
+                    <div>这里是关闭弹窗的内容</div>
+                    <form action="/update" method="post">
+                        用户名: <input class="input" type="text" name="userName" />
+                        密码: <input class="input" type="text" name="passWord" />
+                        <input type="submit" value="Submit" />
+                    </form>
+                </div>
+
+                <tr th:each="user:${users}">
+                    <!-- th为表格标题栏-->
+                    <th>序号</th>
+                    <th th:text="${user.userName}">用户名</th>
+                    <th th:text="${user.passWord}">密码</th>
+                    <th th:text="${user.power}">权限</th>
+                    <th>
+                        <a class="add" href="javascript:;"  th:onclick="showmodal([[${user.userName}]],[[${user.passWord}]])">修改</a>
+                        <a class="delete" th:href="@{/delete/{id}(id=${user.userName})}">删除</a>
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function show(id) {
+        var a = document.getElementById(id);
+        if (a.offsetWidth > 0 || a.offsetHeight > 0) {
+            a.style.display = "none";
+        } else {
+            a.style.display = "block";
+        }
+    }
+
+    var modalBtn = document.getElementById('modalBtn');
+    var modal = document.getElementById('modal');
+    modalBtn.addEventListener("click", showmodal());
+
+    function showmodal(userName,passWord) {
+        document.getElementsByName("userName")[0].value = userName;
+        document.getElementsByName("passWord")[0].value = passWord;
+        modal.style.display = "block";
+    }
+
+    function hide() {
+        modal.style.display = "none";
+    }
+
+</script>
+</html>

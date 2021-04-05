@@ -1,0 +1,25 @@
+server:
+  port: 8080
+spring:
+  #  mvc:
+  #    #访问静态资源的前缀
+  #    #会影响welcome page失效
+  #    #会影响favicon.ico失效
+  #    static-path-pattern: /res/**
+  web:
+    resources:
+      #指定静态资源的文件位置
+      #默认路径如下
+      #classpath:/META-INF/resources/
+      #classpath:/resources/
+      #classpath:/static/
+      #classpath:/public/
+      static-locations: classpath:/haha/
+  datasource:
+    url: jdbc:mysql://localhost:3306/demo_login?useUnicode=true&useJDBCCompliantTimezoneShift=true&serverTimezone=CST&characterEncoding=utf8&allowMultiQueries=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  mapper-locations: classpath:Mapper/*.xml
+
