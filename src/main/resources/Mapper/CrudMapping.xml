@@ -10,6 +10,6 @@
         INSERT into time (username) values (#{userName});
     </insert>
     <update id="update" parameterType="String">
-        UPDATE user SET password=#{passWord} WHERE username = #{userName}
+        UPDATE user SET password=#{passWord} , power=#{permission} WHERE username = #{userName}
     </update>
 </mapper>

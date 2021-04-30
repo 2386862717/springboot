@@ -34,9 +34,16 @@
                     <a style="position: absolute;bottom:20px;right:20px;" href="javascript:hide()">关闭</a>
                     <div>这里是关闭弹窗的内容</div>
                     <form action="/update" method="post">
-                        用户名: <input class="input" type="text" name="userName" />
-                        密码: <input class="input" type="text" name="passWord" />
-                        <input type="submit" value="Submit" />
+                        用户名: <input class="input" type="text" name="userName"/>
+                        <br>
+                        密码:&nbsp&nbsp <input class="input" type="text" name="passWord"/>
+                        <br>
+                        权限:&nbsp&nbsp&nbsp<select class="input" name="permission">
+                                <option>admin</option>
+                                <option>user</option>
+                            </select>
+                        <br>
+                        <input class="change-button" type="submit" value="Submit"/>
                     </form>
                 </div>
 
@@ -47,7 +54,8 @@
                     <th th:text="${user.passWord}">密码</th>
                     <th th:text="${user.power}">权限</th>
                     <th>
-                        <a class="add" href="javascript:;"  th:onclick="showmodal([[${user.userName}]],[[${user.passWord}]])">修改</a>
+                        <a class="add" href="javascript:;"
+                           th:onclick="showmodal([[${user.userName}]],[[${user.passWord}]])">修改</a>
                         <a class="delete" th:href="@{/delete/{id}(id=${user.userName})}">删除</a>
                     </th>
                 </tr>
@@ -70,7 +78,7 @@
     var modal = document.getElementById('modal');
     modalBtn.addEventListener("click", showmodal());
 
-    function showmodal(userName,passWord) {
+    function showmodal(userName, passWord) {
         document.getElementsByName("userName")[0].value = userName;
         document.getElementsByName("passWord")[0].value = passWord;
         modal.style.display = "block";

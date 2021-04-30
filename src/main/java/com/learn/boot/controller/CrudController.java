@@ -3,10 +3,7 @@ package com.learn.boot.controller;
 import com.learn.boot.dao.CrudDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class CrudController {
@@ -30,8 +27,10 @@ public class CrudController {
 
     @PostMapping("/update")
     public String update(@RequestParam("userName") String userName,
-                      @RequestParam("passWord") String passWord){
-        crudDao.update(userName,passWord);
+                      @RequestParam("passWord") String passWord,
+                        @RequestParam("permission") String permission){
+        System.out.println(permission);
+        crudDao.update(userName,passWord,permission);
         return "redirect:/user-information.html";
     }
 }

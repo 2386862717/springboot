@@ -15,5 +15,5 @@ public interface CrudDao {
     public void add(@Param("userName")String userName,@Param("passWord")String passWord);
 
     //修改
-    public void update(@Param("userName")String userName,@Param("passWord")String passWord);
+    public void update(@Param("userName")String userName,@Param("passWord")String passWord,@Param("permission")String permission);
 }
