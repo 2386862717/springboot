@@ -14,7 +14,7 @@ import java.util.List;
 @Repository
 public interface UserDao {
     //验证密码是否正确
-    public User checkPassWord(@Param("userName") String userName, @Param("passWord") String passWord);
+    public User getUser(@Param("userName") String userName, @Param("passWord") String passWord);
 
     //获取所有用户信息
     public List<User> getAllUser();

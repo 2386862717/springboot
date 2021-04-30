@@ -21,6 +21,8 @@ public class CrudController {
     @PostMapping("/add")
     public String add(@RequestParam("username") String userName,
                       @RequestParam("password") String passWord){
+        if (userName=="" || passWord=="")
+            return "redirect:/user-information.html";
         crudDao.add(userName,passWord);
         return "redirect:/user-information.html";
     }
@@ -29,7 +31,6 @@ public class CrudController {
     public String update(@RequestParam("userName") String userName,
                       @RequestParam("passWord") String passWord,
                         @RequestParam("permission") String permission){
-        System.out.println(permission);
         crudDao.update(userName,passWord,permission);
         return "redirect:/user-information.html";
     }

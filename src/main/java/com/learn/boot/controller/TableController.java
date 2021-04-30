@@ -20,10 +20,8 @@ public class TableController {
     @GetMapping("/user-information.html")
     public String userInformation(Model model, HttpSession session) {
         List<User> users = userDao.getAllUser();
-        System.out.println(session.getId());
         model.addAttribute("users", users);
         return "user-information";
-
     }
 
     //获取上次登录时间
