@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8090
 spring:
   #  mvc:
   #    #访问静态资源的前缀
@@ -16,9 +16,9 @@ spring:
       #classpath:/public/
       static-locations: classpath:/haha/
   datasource:
-    url: jdbc:mysql://localhost:3306/demo_login?useUnicode=true&useJDBCCompliantTimezoneShift=true&serverTimezone=CST&characterEncoding=utf8&allowMultiQueries=true
+    url: jdbc:mysql://49.234.237.149:3306/demo_login?useUnicode=true&useJDBCCompliantTimezoneShift=true&serverTimezone=CST&characterEncoding=utf8&allowMultiQueries=true
     username: root
-    password: 123456
+    password: wr9084151
     driver-class-name: com.mysql.cj.jdbc.Driver
 mybatis:
   mapper-locations: classpath:Mapper/*.xml

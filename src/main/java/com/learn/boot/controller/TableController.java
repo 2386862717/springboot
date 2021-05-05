@@ -31,7 +31,5 @@ public class TableController {
         model.addAttribute("times", times);
         return "user-last-login";
     }
-
-
 }
 

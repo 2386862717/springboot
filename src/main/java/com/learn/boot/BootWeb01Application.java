@@ -11,11 +11,11 @@ public class BootWeb01Application {
         //返回IOC容器
         ConfigurableApplicationContext run = SpringApplication.run(BootWeb01Application.class, args);
 
-        //查看容器里的组件
-        String[] names = run.getBeanDefinitionNames();
-        for (String name : names) {
-            System.out.println(name);
-        }
+//        //查看容器里的组件
+//        String[] names = run.getBeanDefinitionNames();
+//        for (String name : names) {
+//            System.out.println(name);
+//        }
 
     }
 

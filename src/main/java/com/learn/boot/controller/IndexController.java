@@ -24,9 +24,7 @@ public class IndexController {
     //验证账号 密码
     @RequestMapping({"/login"})
     public String check(String userName, String passWord, Model model, HttpSession session) {
-
         User user = userDao.getUser(userName, passWord);
-
         if (user == null) {
             model.addAttribute("msg", "账号密码错误");
             return "index";
@@ -38,8 +36,9 @@ public class IndexController {
             return "redirect:/main.html";
         } else {
             //数据库插入当前时间
+            session.setAttribute("userName", userName);
             userDao.updateDate(userName,new Timestamp(System.currentTimeMillis()));
-            return "blog";
+            return "redirect:/blog.html";
         }
     }
 
