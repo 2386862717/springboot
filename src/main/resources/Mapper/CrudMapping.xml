@@ -6,7 +6,7 @@
 	    DELETE FROM time WHERE username=#{userName};
     </delete>
     <insert id="add" parameterType="String">
-        INSERT into user (username,password) values (#{userName},#{passWord});
+        INSERT into user (username,password,power) values (#{userName},#{passWord},#{power});
         INSERT into time (username) values (#{userName});
     </insert>
     <update id="update" parameterType="String">

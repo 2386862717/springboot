@@ -25,4 +25,7 @@ public interface UserDao {
     //获取所有用户的上次登录时间
     public List<Time> getAllinfo();
 
+    //获取所有用户的上次登录时间
+    public List<String> getBookName(@Param("userName") String userName);
+
 }

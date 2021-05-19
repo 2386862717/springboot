@@ -20,4 +20,10 @@
         SELECT *
         FROM time
     </select>
+
+    <select id="getBookName" resultType="java.lang.String">
+        SELECT picture_url
+        FROM user_book
+        WHERE username=#{userName}
+    </select>
 </mapper>

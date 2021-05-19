@@ -8,6 +8,8 @@ html, body, div, p, form, label, ul, li, dl, dt, dd, ol, img, button, h1, h2, h3
     font-style: normal;
     font-weight: normal;
 }
+body, ul, li, h1, h2, h3, h4, h5, h6, p, form, dl, dt, dd { margin: 0px; padding: 0px;
+    font-size: 12px; font-weight: normal; }
 
 dl, dt, dd {
     display: block;

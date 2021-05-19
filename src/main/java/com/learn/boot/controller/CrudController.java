@@ -20,10 +20,11 @@ public class CrudController {
 
     @PostMapping("/add")
     public String add(@RequestParam("username") String userName,
-                      @RequestParam("password") String passWord){
+                      @RequestParam("password") String passWord,
+                      @RequestParam("power") String power){
         if (userName=="" || passWord=="")
             return "redirect:/user-information.html";
-        crudDao.add(userName,passWord);
+        crudDao.add(userName,passWord,power);
         return "redirect:/user-information.html";
     }
 
@@ -31,7 +32,8 @@ public class CrudController {
     public String update(@RequestParam("userName") String userName,
                       @RequestParam("passWord") String passWord,
                         @RequestParam("permission") String permission){
-        crudDao.update(userName,passWord,permission);
+        if(permission.equals("admin"))
+            crudDao.update(userName,passWord,permission);
         return "redirect:/user-information.html";
     }
 }

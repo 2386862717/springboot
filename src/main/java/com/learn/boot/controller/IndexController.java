@@ -26,7 +26,7 @@ public class IndexController {
     public String check(String userName, String passWord, Model model, HttpSession session) {
         User user = userDao.getUser(userName, passWord);
         if (user == null) {
-            model.addAttribute("msg", "账号密码错误");
+            model.addAttribute("msg", "账号或密码错误");
             return "index";
         } else if (user.getPower().equals("admin")) {
             //传入前端

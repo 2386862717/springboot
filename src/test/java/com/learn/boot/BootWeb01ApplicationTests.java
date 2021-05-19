@@ -8,7 +8,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 class BootWeb01ApplicationTests {
 
     @Test
-    void contextLoads() {
+    void abc(){
+        System.out.println(222);
     }
 
 }

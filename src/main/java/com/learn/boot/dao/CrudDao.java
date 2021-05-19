@@ -8,12 +8,12 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface CrudDao {
-    //删除
+    //删除用户
     public void delete(@Param("userName")String userName);
 
-    //添加
-    public void add(@Param("userName")String userName,@Param("passWord")String passWord);
+    //添加用户
+    public void add(@Param("userName")String userName,@Param("passWord")String passWord,@Param("power") String power);
 
-    //修改
+    //修改用户
     public void update(@Param("userName")String userName,@Param("passWord")String passWord,@Param("permission")String permission);
 }

@@ -6,42 +6,105 @@
     <link rel="stylesheet" type="text/css" href="../haha/css/User.css" th:href="@{/css/User.css}"/>
 </head>
 <body>
-<div>
-    <h1><a><img th:src="@{/image/Logo.bmp}" alt="简搜题"/> </a></h1>
-    <form action="/search" method="post" >
-        <input type="text" class="search" id="content" name="problems" placeholder="在 雨课堂题库中搜索..."/>
-        <input id="search" type="submit" value="搜索" th:onclick="showmodal([[${question}]],[[${question}]],[[${answer}]],[[${explanation}]])"/>
-    </form>
+<div class="header">
+    <div class="navs">
+        <div class="nav">
+            <ul>
+                <li>
+                    <div style="display: none" class="ppthot"></div>
+                    <a style="color: #6a8ee5" href="temp">网页模板 </a>
+                </li>
+                <li>
+                    <a href="js">网页特效 </a>
+                </li>
+                <li>
+                    <a href="game">网页游戏 </a>
+                </li>
+                <li>
+                    <div class="free"></div>
+                    <a href="demo">java程序案例 </a>
+                </li>
+                <li>
+                    <div class="free"></div>
+                    <a href="source">整站源码 </a>
+                </li>
+                <li>
+                    <a href="/blog">书 </a>
+                </li>
+            </ul>
+        </div>
+        <div class="login">
+            <!-- 未登录 -->
+            <a name="注册" class="regist" >注册</a>
+            <a name="登录" class="regist-lg">QQ登录</a>
+        </div>
+    </div>
 </div>
 
-<table width="100%" border="1">
+<div style="display: flex; height: 600px;width: 1000px; margin:0px auto;flex-wrap: wrap">
+    <div style="height: 200px;width: 200px;margin: 10px">
+        <div style="background: url('https://data.zhangjia.io/user_files/1/bbs/images/28000976_1554809817.jpg');background-size:200px 190px;height: 190px;width: 200px;">
 
-        <!-- th为表格标题栏-->
-    <tr align="left">
-        <th>问题</th>
-        <th th:text="${question}" th:name="question"></th>
-    </tr>
-    <tr align="left">
-        <th>选项</th>
-        <th th:text="${choice}" th:name="choice"></th>
-    </tr>
-    <tr align="left">
-        <th>答案</th>
-        <th th:text="${answer}" th:name="answer"></th>
-    </tr>
-    <tr align="left">
-        <th>解析</th>
-        <th th:text="${explanation}" th:name="explanation"></th>
-    </tr>
-</table>
+        </div>
+    </div>
+
+    <div style="height: 200px;width: 200px;margin: 10px">
+        <div style="background: url('https://data.zhangjia.io/user_files/1/bbs/images/28000976_1554809817.jpg');background-size:200px 190px;height: 190px;width: 200px;">
+
+        </div>
+    </div>
+
+    <div style="height: 200px;width: 200px;margin: 10px">
+        <div style="background: url('https://data.zhangjia.io/user_files/1/bbs/images/28000976_1554809817.jpg');background-size:200px 190px;height: 190px;width: 200px;">
+
+        </div>
+    </div>
+
+    <div style="height: 200px;width: 200px;margin: 10px">
+        <div style="background: url('https://data.zhangjia.io/user_files/1/bbs/images/28000976_1554809817.jpg');background-size:200px 190px;height: 190px;width: 200px;">
+
+        </div>
+    </div>
+
+    <div style="height: 200px;width: 200px;margin: 10px">
+        <div style="background: url('https://data.zhangjia.io/user_files/1/bbs/images/28000976_1554809817.jpg');background-size:200px 190px;height: 190px;width: 200px;">
+
+        </div>
+    </div>
+
+    <div style="height: 200px;width: 200px;margin: 10px">
+        <div style="background: url('https://data.zhangjia.io/user_files/1/bbs/images/28000976_1554809817.jpg');background-size:200px 190px;height: 190px;width: 200px;">
+
+        </div>
+    </div>
+
+    <div style="height: 200px;width: 200px;margin: 10px">
+        <div style="background: url('https://data.zhangjia.io/user_files/1/bbs/images/28000976_1554809817.jpg');background-size:200px 190px;height: 190px;width: 200px;">
+
+        </div>
+    </div>
+
+    <div style="height: 200px;width: 200px;margin: 10px">
+        <div style="background: url('https://data.zhangjia.io/user_files/1/bbs/images/28000976_1554809817.jpg');background-size:200px 190px;height: 190px;width: 200px;">
+
+        </div>
+    </div>
+
+    <div style="height: 200px;width: 200px;margin: 10px">
+        <div style="background: url('https://data.zhangjia.io/user_files/1/bbs/images/28000976_1554809817.jpg');background-size:200px 190px;height: 190px;width: 200px;">
+
+        </div>
+    </div>
+
+    <div style="height: 200px;width: 200px;margin: 10px">
+        <div style="background: url('https://data.zhangjia.io/user_files/1/bbs/images/28000976_1554809817.jpg');background-size:200px 190px;height: 190px;width: 200px;">
+
+        </div>
+    </div>
+
+</div>
+
 </body>
 <script>
-    function showmodal(question, choice,answer,explanation) {
-        document.getElementsByName("question")[0].value = question;
-        document.getElementsByName("choice")[0].value = choice;
-        document.getElementsByName("answer")[0].value = answer;
-        document.getElementsByName("explanation")[0].value = explanation;
-    }
-
 </script>
 </html>

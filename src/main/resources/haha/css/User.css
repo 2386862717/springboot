@@ -1,68 +1,115 @@
-html {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+@CHARSET "UTF-8";
+.clear {
+    clear: both;
+    height: 1px;
+    width: 100%
 }
 
-body {
+.header {
     width: 100%;
-    height: 100%;
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    background-color: #11474a;
-}
-
-div{
+    min-width: 1200px;
+    height: 75px;
+    background: #fff;
     text-align: center;
-}
-img {
-    width: 90px;
-    height: 90px;
-}
-
-
-h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
-}
-#content{
-    width: 550px;
-    height: 33px;
-    outline-style: none ;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    position: relative;
+    box-shadow: 0 0 5px #d2d2d2;
+    -webkit-box-shadow: 0 0 5px #d2d2d2;
+    -moz-box-shadow: 0 0 5px #d2d2d2;
+    z-index: 13
 }
 
-#search {
-    width: 150px;
-    height: 40px;
-    margin-bottom: 10px;
-    outline: none;
-    padding: 10px;
-    font-size: 13px;
+.header .navs {
+    position: relative;
+    margin: 0 auto;
+    height: 75px;
+    width: 1200px
+}
+
+.header .navs .nav {
+    position: relative;
+    width: 715px;
+    height: 80px;
+    display: block;
+    color: #000;
+    float: left;
+}
+
+.header .navs .nav ul {
+    height: 75px;
+    display: inline-block;
+    margin-left: -34px;
+    z-index: 100
+}
+
+.header .navs .nav li {
+    position: relative;
+    float: left;
+    list-style:none;
+    bottom: 15px;
+}
+
+.header .navs .nav li:hover {
+    color: #595959
+}
+
+.header .navs .nav li a {
+    display: inline-block;
+    float: left;
+    font-size: 15px;
+    padding: 0 15px;
+    height: 75px;
+    line-height: 75px;
+    color: #000
+}
+
+.header .navs .nav li a:hover {
+    color: #6589e4
+}
+
+.header .navs .login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 40;
+}
+
+.header .navs .login .regist {
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 68px;
+    height: 31px;
+    line-height: 31px;
+    float: right;
+    color: #d7000f;
+    border: 1px solid #AFABAB;
+    font-size: 14px;
+    color: #9A9292;
+    cursor: pointer
+}
+
+.header .navs .login .regist:hover {
     color: #fff;
-    text-shadow: 1px 1px 1px;
-    border-top: 1px solid #312E3D;
-    border-left: 1px solid #312E3D;
-    border-right: 1px solid #312E3D;
-    border-bottom: 1px solid #56536A;
-    border-radius: 4px;
-    background-color: #2D2D3F;
+    background: #6287e3;
+    border: 1px solid #6287e3
 }
 
+.header .navs .login .regist-lg {
+    margin-top: 20px;
+    width: 80px;
+    height: 31px;
+    line-height: 31px;
+    float: right;
+    color: #d7000f;
+    border: 1px solid #6287e3;
+    font-size: 14px;
+    color: #6287e3;
+    cursor: pointer
+}
 
-/*#over*/
-/*{*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    opacity:0.8;!*设置背景色透明度,1为完全不透明,IE需要使用filter:alpha(opacity=80);*!*/
-/*    filter:alpha(opacity=80);*/
-/*    display: none;*/
-/*    position:absolute;*/
-/*    top:0;*/
-/*    left:0;*/
-/*    z-index:1;*/
-/*    background: silver;*/
-/*}*/
+.header .navs .login .regist-lg:hover {
+    color: #fff;
+    background: #6287e3
+}
+
 
 
