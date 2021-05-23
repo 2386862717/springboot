@@ -16,11 +16,6 @@ public class IndexController {
     @Autowired
     private UserDao userDao;
 
-    @GetMapping({"login", "/"})
-    public String login() {
-        return "index";
-    }
-
     //验证账号 密码
     @RequestMapping({"/login"})
     public String check(String userName, String passWord, Model model, HttpSession session) {

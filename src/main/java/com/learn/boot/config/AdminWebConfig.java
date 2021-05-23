@@ -11,6 +11,6 @@ public class AdminWebConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginIntercepter())
                 .addPathPatterns("/**")
-                .excludePathPatterns("/", "/login", "/css/**", "/main/**", "/image/**");
+                .excludePathPatterns("/", "/login", "/css/**", "/main/**", "/image/**","/blog/**");
     }
 }

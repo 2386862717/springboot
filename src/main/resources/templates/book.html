@@ -29,7 +29,7 @@
                     <a href="source">整站源码 </a>
                 </li>
                 <li>
-                    <a href="/blog">书 </a>
+                    <a href="/blog/book">书 </a>
                 </li>
             </ul>
         </div>
@@ -43,8 +43,8 @@
 
 
 <div style="display: flex; height: 600px;width: 1000px; margin:0px auto;flex-wrap: wrap">
-    <div th:each="book:${books}" style="height: 200px;width: 200px;margin: 10px">
-        <img height="200" width="190" th:src="@{${book}}" alt="">
+    <div th:each="userBook:${userBooks}" style="height: 200px;width: 200px;margin: 10px">
+        <img height="200" width="190" th:src="@{${userBook}}" alt="">
     </div>
 </div>
 

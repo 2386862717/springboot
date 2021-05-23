@@ -13,19 +13,32 @@ import java.util.List;
 @Mapper
 @Repository
 public interface UserDao {
-    //验证密码是否正确
+    /**
+     * @param userName
+     * @param passWord
+     * @return  用户的用户名 密码 权限
+     * 验证密码是否正确
+     */
     public User getUser(@Param("userName") String userName, @Param("passWord") String passWord);
 
-    //获取所有用户信息
+    /**
+     *
+     * @return 所有用户信息
+     */
     public List<User> getAllUser();
 
-    //更新用户登录时间
+    /**
+     *
+     * @param userName
+     * @param date
+     * 更新用户登录时间
+     */
     public void updateDate(@Param("userName") String userName, @Param("date") Timestamp date);
 
-    //获取所有用户的上次登录时间
+    /**
+     *
+     * @return 所有用户的上次登录时间
+     */
     public List<Time> getAllinfo();
-
-    //获取所有用户的上次登录时间
-    public List<String> getBookName(@Param("userName") String userName);
 
 }
