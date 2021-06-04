@@ -15,6 +15,7 @@ spring:
       #classpath:/static/
       #classpath:/public/
       static-locations: classpath:/haha/
+
   datasource:
     url: jdbc:mysql://49.234.237.149:3306/demo_login?useUnicode=true&useJDBCCompliantTimezoneShift=true&serverTimezone=CST&characterEncoding=utf8&allowMultiQueries=true
     username: root

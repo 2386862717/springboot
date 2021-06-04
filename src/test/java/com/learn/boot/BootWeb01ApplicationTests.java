@@ -5,7 +5,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 
 @SpringBootTest
-class BootWeb01ApplicationTests {
+class
+BootWeb01ApplicationTests {
 
     @Test
     void abc(){

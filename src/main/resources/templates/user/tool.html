@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../haha/css/User.css" th:href="@{/css/User.css}"/>
+</head>
+<body>
+<div class="header">
+    <div class="navs">
+        <div class="nav">
+            <ul>
+                <li>
+                    <div style="display: none" class="ppthot"></div>
+                    <a style="color: #6a8ee5" href="temp">网页模板 </a>
+                </li>
+                <li>
+                    <a href="js">网页特效 </a>
+                </li>
+                <li>
+                    <a href="game">网页游戏 </a>
+                </li>
+                <li>
+                    <div class="free"></div>
+                    <a href="demo">java程序案例 </a>
+                </li>
+                <li>
+                    <div class="free"></div>
+                    <a href="/blog/tool">小工具 </a>
+                </li>
+                <li>
+                    <a href="/blog/book">书 </a>
+                </li>
+            </ul>
+        </div>
+        <div class="login">
+            <!-- 未登录 -->
+            <a name="注册" class="regist">注册</a>
+            <a name="登录" class="regist-lg">QQ登录</a>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div style="text-align: left;margin-right: 20%;margin-left: 20%">
+        <form method="post" action="/blog/switch" onsubmit="return check()">
+            <br>
+            <label>当前进制&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+            <div>
+                <label for="hex_2"><input type="radio" class="js-hex" name="old_hex" id="hex_2" value="2" checked="checked"> 2进制</label>
+                <label for="hex_8"><input type="radio" class="js-hex" name="old_hex" id="hex_8" value="8"> 8进制</label>
+                <label for="hex_10"><input type="radio" class="js-hex" name="old_hex" id="hex_10" value="10">10进制</label>
+                <label for="hex_16"><input type="radio" class="js-hex" name="old_hex" id="hex_16" value="16"> 16进制</label>
+            </div>
+            <label>要转换的进制</label>
+            <div>
+                <label for="hex_2"><input type="radio" class="js-hex" name="new_hex" id="hex_22" value="2" checked="checked"> 2进制</label>
+                <label for="hex_8"><input type="radio" class="js-hex" name="new_hex" id="hex_88" value="8"> 8进制</label>
+                <label for="hex_10"><input type="radio" class="js-hex" name="new_hex" id="hex_1010" value="10">10进制</label>
+                <label for="hex_16"><input type="radio" class="js-hex" name="new_hex" id="hex_1616" value="16"> 16进制</label>
+            </div>
+            </p>
+            <p>
+                <input type="text" id="num" name="num" class="text" autocomplete="off" th:value="${value}">
+                <button type="submit">转换</button>
+            </p>
+        </form>
+    </div>
+</div>
+
+
+</body>
+<script>
+    function check() {
+        var num = document.getElementById("num").value;
+        if (num === "") {
+            alert("输入框不能为空！");
+            return false;
+        }
+    }
+</script>
+</html>
