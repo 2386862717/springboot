@@ -1,4 +1,4 @@
-package com.learn.boot.controller;
+package com.learn.boot.controller.admin;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

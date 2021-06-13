@@ -1,4 +1,4 @@
-package com.learn.boot.controller;
+package com.learn.boot.controller.admin;
 
 import com.learn.boot.dao.CrudDao;
 import org.springframework.beans.factory.annotation.Autowired;

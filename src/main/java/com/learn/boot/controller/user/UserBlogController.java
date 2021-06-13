@@ -1,4 +1,4 @@
-package com.learn.boot.controller;
+package com.learn.boot.controller.user;
 
 import com.learn.boot.dao.BlogDao;
 import com.learn.boot.entity.Book;
@@ -49,60 +49,72 @@ public class UserBlogController {
         return "user/tool";
     }
 
+    /**
+     * @param oldHex
+     * @param newHex
+     * @param num
+     * @param model
+     * @return 进制转换工具
+     */
     @PostMapping("/blog/switch")
     public String hexSwitch(@RequestParam("old_hex") Integer oldHex,
                             @RequestParam("new_hex") Integer newHex,
                             @RequestParam("num") String num,
                             Model model) {
-        String s = num;
+
+        String output = num;
         if (oldHex == 2) {
             if (newHex == 8) {
                 //二进制转八进制
-                s = Integer.toOctalString(Integer.parseInt(num, 2));
+                output = Integer.toOctalString(Integer.parseInt(num, 2));
             } else if (newHex == 10) {
                 //二进制转十进制
-                s = Integer.valueOf(num, 2).toString();
+                output = Integer.valueOf(num, 2).toString();
             } else if (newHex == 16) {
                 //二进制转十六进制
-                s = Integer.toHexString(Integer.parseInt(num, 2));
+                output = Integer.toHexString(Integer.parseInt(num, 2));
             }
         } else if (oldHex == 8) {
             if (newHex == 2) {
                 //八进制转成二进制
-                s = Integer.toBinaryString(Integer.valueOf(num, 8));
+                output = Integer.toBinaryString(Integer.valueOf(num, 8));
             } else if (newHex == 10) {
                 //八进制转成十进制
-                s = Integer.valueOf(num, 8).toString();
+                output = Integer.valueOf(num, 8).toString();
             } else if (newHex == 16) {
                 //八进制转成十六进制
-                s = Integer.toHexString(Integer.valueOf(num, 8));
+                output = Integer.toHexString(Integer.valueOf(num, 8));
             }
         } else if (oldHex == 10) {
             if (newHex == 2) {
                 //十进制转成二进制
-                s = Integer.toBinaryString(Integer.parseInt(num));
+                output = Integer.toBinaryString(Integer.parseInt(num));
             } else if (newHex == 8) {
                 //十进制转成八进制
-                s = Integer.toOctalString(Integer.parseInt(num));
+                output = Integer.toOctalString(Integer.parseInt(num));
             } else if (newHex == 16) {
                 //十进制转成十六进制：
-                s = Integer.toHexString(Integer.parseInt(num));
+                output = Integer.toHexString(Integer.parseInt(num));
             }
         } else if (oldHex == 16) {
             if (newHex == 2) {
                 //十六进制转成二进制
-                s = Integer.toBinaryString(Integer.valueOf(num, 16));
+                output = Integer.toBinaryString(Integer.valueOf(num, 16));
             } else if (newHex == 8) {
                 //十六进制转成八进制
-                s = Integer.toOctalString(Integer.valueOf(num, 16));
+                output = Integer.toOctalString(Integer.valueOf(num, 16));
             } else if (newHex == 10) {
                 //十六进制转成十进制
-                s = Integer.valueOf(num, 16).toString();
+                output = Integer.valueOf(num, 16).toString();
             }
         }
-        model.addAttribute("value", s);
+        model.addAttribute("oldHex", oldHex);
+        model.addAttribute("newHex", newHex);
+        model.addAttribute("input", num);
+        model.addAttribute("output", output);
         return "user/tool";
     }
+
 
     @GetMapping("/blog.html")
     public String userLastLogin(Model model) {

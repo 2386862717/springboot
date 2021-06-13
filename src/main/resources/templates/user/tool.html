@@ -12,7 +12,7 @@
             <ul>
                 <li>
                     <div style="display: none" class="ppthot"></div>
-                    <a style="color: #6a8ee5" href="temp">网页模板 </a>
+                    <a style="color: #6a8ee5" href="">主页 </a>
                 </li>
                 <li>
                     <a href="js">网页特效 </a>
@@ -45,25 +45,37 @@
     <div style="text-align: left;margin-right: 20%;margin-left: 20%">
         <form method="post" action="/blog/switch" onsubmit="return check()">
             <br>
-            <label>当前进制&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
             <div>
-                <label for="hex_2"><input type="radio" class="js-hex" name="old_hex" id="hex_2" value="2" checked="checked"> 2进制</label>
-                <label for="hex_8"><input type="radio" class="js-hex" name="old_hex" id="hex_8" value="8"> 8进制</label>
-                <label for="hex_10"><input type="radio" class="js-hex" name="old_hex" id="hex_10" value="10">10进制</label>
-                <label for="hex_16"><input type="radio" class="js-hex" name="old_hex" id="hex_16" value="16"> 16进制</label>
+                <label for="hex_2"><input type="radio" class="js-hex" name="old_hex" id="hex_2" value="2"
+                                          checked="checked" th:checked="${oldHex==2}? true : false"> 2进制</label>
+                <label for="hex_8"><input type="radio" class="js-hex" name="old_hex" id="hex_8" value="8"
+                                          th:checked="${oldHex==8}? true : false"> 8进制</label>
+                <label for="hex_10"><input type="radio" class="js-hex" name="old_hex" id="hex_10" value="10"
+                                           th:checked="${oldHex==10}? true : false">10进制</label>
+                <label for="hex_16"><input type="radio" class="js-hex" name="old_hex" id="hex_16" value="16"
+                                           th:checked="${oldHex==16}? true : false"> 16进制</label>
             </div>
-            <label>要转换的进制</label>
+            <span style="color:#c09853;background-color:#fcf8e3;border-color:#c09853; height: 18px; vertical-align:top;">转换数字</span><input
+                type="text" id="input" name="num" class="text" autocomplete="off"
+                th:value="${input}" style="height: 15px; vertical-align:top; width: 300px"><button type="submit"
+                    style="vertical-align: top;color: #fff;background: #6287e3;border: 1px solid #6287e3;">转换</button>
+            <br>
+            <br>
+            <br>
             <div>
-                <label for="hex_2"><input type="radio" class="js-hex" name="new_hex" id="hex_22" value="2" checked="checked"> 2进制</label>
-                <label for="hex_8"><input type="radio" class="js-hex" name="new_hex" id="hex_88" value="8"> 8进制</label>
-                <label for="hex_10"><input type="radio" class="js-hex" name="new_hex" id="hex_1010" value="10">10进制</label>
-                <label for="hex_16"><input type="radio" class="js-hex" name="new_hex" id="hex_1616" value="16"> 16进制</label>
+                <label for="hex_2"><input type="radio" class="js-hex" name="new_hex" id="hex_22" value="2"
+                                          checked="checked" th:checked="${newHex==2}? true : false"> 2进制</label>
+                <label for="hex_8"><input type="radio" class="js-hex" name="new_hex" id="hex_88" value="8"
+                                          th:checked="${newHex==8}? true : false"> 8进制</label>
+                <label for="hex_10"><input type="radio" class="js-hex" name="new_hex" id="hex_1010" value="10"
+                                           th:checked="${newHex==10}? true : false">10进制</label>
+                <label for="hex_16"><input type="radio" class="js-hex" name="new_hex" id="hex_1616" value="16"
+                                           th:checked="${newHex==16}? true : false"> 16进制</label>
             </div>
-            </p>
-            <p>
-                <input type="text" id="num" name="num" class="text" autocomplete="off" th:value="${value}">
-                <button type="submit">转换</button>
-            </p>
+
+            <span style="color:#c09853;background-color:#fcf8e3;border-color:#c09853; height: 18px; vertical-align:top;">转换数字</span><input
+                type="text" id="num" name="none" class="text" autocomplete="off"
+                th:value="${output}" style="height: 15px; vertical-align:top; width: 300px">
         </form>
     </div>
 </div>
@@ -72,7 +84,23 @@
 </body>
 <script>
     function check() {
-        var num = document.getElementById("num").value;
+        var num = document.getElementById("input").value;
+        var obj = document.getElementsByName("old_hex");
+        var obj2 = document.getElementsByName("new_hex");
+        var flags = false;
+        for(var i=0; i<obj.length; i ++){
+            for(var j=0; j<obj2.length; j ++){
+                if(obj[i].checked===true && obj2[j].checked===true){
+                    flags = true;
+                }
+            }
+        }
+        if (flags === false)
+        {
+            alert("对不起，请选择")
+            return false;
+        }
+
         if (num === "") {
             alert("输入框不能为空！");
             return false;

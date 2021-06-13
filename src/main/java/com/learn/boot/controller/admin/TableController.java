@@ -1,4 +1,4 @@
-package com.learn.boot.controller;
+package com.learn.boot.controller.admin;
 
 import com.learn.boot.dao.UserDao;
 import com.learn.boot.entity.User;
